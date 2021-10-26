@@ -1,0 +1,50 @@
+<div class="central">
+    <mat-card class="example-card" layout="row" layout-align="center center">
+      <mat-card-header>
+        <mat-card-title>Note</mat-card-title>
+        <mat-card-subtitle>{{isNewUser ? 'New' : 'Edit'}}</mat-card-subtitle>
+       
+      </mat-card-header>
+      
+      <mat-card-content>
+        <form  [formGroup]="Form">
+          <div layout-fill >
+            <mat-form-field appearance="fill" layout-fill >
+              <mat-label>Title</mat-label>
+              <input matInput #input1  formControlName="Title" required cdkFocusInitial>
+              <mat-error>Invalid Title minimum size 6</mat-error>
+            </mat-form-field>
+  
+          </div>
+  
+          <div  layout-fill>
+            <mat-form-field appearance="fill" layout-fill>
+              <mat-label>Note</mat-label>
+              <textarea matInput rows="5" cols="40" formControlName="Note" required></textarea>
+              <mat-error>Invalid note size minimum size 6</mat-error>
+            </mat-form-field>
+          </div>
+
+          <div class="divData">
+            <div  layout-fill>   
+                <mat-label>Create at :{{data.CreatedAt | date: 'dd:MMM:yyyy hh-mm-ss'}} </mat-label>
+            </div>
+
+            <div  layout-fill [hidden]="isNewUser" >
+                <mat-label>Last update :{{data.UpdatedAt | date: 'dd:MMM:yyyy hh-mm-ss'}}</mat-label>
+            </div>
+          </div>
+        </form>
+        
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-raised-button (click)="onSaveNote()" color="primary"  [disabled]="Form.invalid">Save</button>
+        <button mat-button  (click)="onClear()" color="warn">Clear</button>
+        <button mat-button  (click)="onCancel()">Cancel</button>
+      </mat-card-actions>
+    </mat-card>
+</div>
+  
+  
+    
+  

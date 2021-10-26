@@ -1,0 +1,59 @@
+<div class="central">
+  <mat-card class="example-card" layout="row" layout-align="center center">
+    <mat-card-header>
+      <mat-card-title>User</mat-card-title>
+      <mat-card-subtitle>New</mat-card-subtitle>
+    </mat-card-header>
+    
+    <mat-card-content>
+      <form  [formGroup]="Form">
+        <div layout-fill >
+          <mat-form-field appearance="fill" layout-fill >
+            <mat-label>Enter your email</mat-label>
+            <input matInput #input1 placeholder="pat@example.com" formControlName="nome" required cdkFocusInitial>
+            <mat-error>Invalid E-mail</mat-error>
+          </mat-form-field>
+
+        </div>
+
+        <div  layout-fill>
+          <mat-form-field appearance="fill" layout-fill>
+            <mat-label>Enter your password</mat-label>
+            <input matInput [type]="hide ? 'password' : 'text'" formControlName="senha" required>
+            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+              <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+            <mat-error>Password minimun size 6</mat-error>
+            <mat-error>{{getErrorMessage()}}</mat-error>
+          </mat-form-field>
+
+        </div>
+
+
+        <mat-form-field appearance="fill" layout-fill>
+          <mat-label>Retype your password</mat-label>
+          <input matInput [type]="hide ? 'password' : 'text'" formControlName="resenha" required>
+          <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </button>
+          
+          <mat-error *ngIf="Form.get('resenha')?.errors?.wrongSize">Password minimun size 6</mat-error>
+          <mat-error *ngIf="Form.get('resenha')?.errors?.wrongPassword">Wrong Password</mat-error>
+         
+        </mat-form-field>
+
+
+      </form>
+      
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button  color="primary"  (click)="onSaveUser()" [disabled]="Form.invalid">Save</button>
+      <button mat-button color="warn" (click)="onClear()">Clear</button>
+      <button mat-button  (click)="onCancel()">Cancel</button>
+    </mat-card-actions>
+  </mat-card>
+
+</div>
+
+
+  

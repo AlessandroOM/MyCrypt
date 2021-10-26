@@ -1,0 +1,14 @@
+<mat-toolbar>
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span>MyCrypt App</span>
+    <span class="example-spacer"></span>
+    <button mat-button color="primary" (click)="btnClick()"  *ngIf="!logged">Login</button> 
+    <button mat-button  *ngIf="!logged&&!newUserPress" (click)="btnNewUserClick()">Sign-In</button> 
+    <mat-label  *ngIf="logged">{{userEmail}}</mat-label>
+    <button mat-button *ngIf="logged" (click)="btnLogoutClick()">Logout</button> 
+    
+  </mat-toolbar>
+ <app-home [isAuthentcated]="logged" ></app-home>
+ <router-outlet></router-outlet> 

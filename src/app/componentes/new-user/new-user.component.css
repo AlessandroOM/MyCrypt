@@ -1,0 +1,12 @@
+
+.central{
+  margin: auto;
+  width: 60%;
+  align-items: center;
+}
+
+.example-card {
+  margin-top: 5%;
+  max-width: 500px;
+}
+
