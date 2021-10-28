@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { news } from '../models/news';
 import { UserNotes } from '../models/UserNotes';
 import { Usuario } from '../models/usuario';
 
@@ -11,6 +12,7 @@ export class RepositoryService {
 
   private users : Array<Usuario> =[];
   public notes : Array<UserNotes> =[];
+  public News : Array<news> = [];
 
   //notes[] : any;
 
@@ -27,6 +29,31 @@ export class RepositoryService {
     note.Title = "Nota de teste";
     note.Note = "Nota de teste";
     this.addNewNote(note);
+
+    let notice = new news();
+    notice.Id = (this.News.length + 1).toString();
+    notice.Title = "MyCrypt - suas anotações nas Núvens!";
+    notice.News = "Guarde suas anotações em um lugar acessível";
+    this.News.push(notice);
+
+    let notice1 = new news();
+    notice1.Id = (this.News.length + 1).toString();
+    notice1.Title = "MyCrypt - Fácil de usar!";
+    notice1.News = "Selecione a atividade , clique , escreva e pronto!";
+    this.News.push(notice1);
+
+    let notice2 = new news();
+    notice2.Id = (this.News.length + 1).toString();
+    notice2.Title = "MyCrypt - Garanta a segurança das suas notas!";
+    notice2.News = "Protegida por Login!";
+    this.News.push(notice2);
+
+    let notice3 = new news();
+    notice3.Id = (this.News.length + 1).toString();
+    notice3.Title = "MyCrypt - Divulgue aqui!";
+    notice3.News = "Divulgue seus produtos ou projetos nesta área. Entre me contato!";
+    this.News.push(notice3);
+
 
    }
 
@@ -58,6 +85,7 @@ export class RepositoryService {
    addNewNote(note : UserNotes){
      note.Id = (this.notes.length + 1).toString();
      note.CreatedAt = new Date();
+     console.log(note);
      this.notes.push(note);
    };
 

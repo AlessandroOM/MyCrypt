@@ -16,6 +16,7 @@ import { NewUserComponent } from './componentes/new-user/new-user.component';
 import { HomeComponent } from './componentes/home/home.component';
 import { ListNotesComponent } from './componentes/list-notes/list-notes.component';
 import { FormNoteComponent } from './componentes/form-note/form-note.component';
+import { ListNewsComponent } from './componentes/list-news/list-news.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { FormNoteComponent } from './componentes/form-note/form-note.component';
     NewUserComponent,
     HomeComponent,
     ListNotesComponent,
-    FormNoteComponent
+    FormNoteComponent,
+    ListNewsComponent
 
   ],
   imports: [

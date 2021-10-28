@@ -1,12 +1,13 @@
 
 .central{
   margin: auto;
+  margin-left: 40%;
   width: 60%;
   align-items: center;
 }
 
 .example-card {
   margin-top: 5%;
-  max-width: 500px;
+  max-width: 250px;
 }
 

@@ -1,4 +1,4 @@
-<P>LOGADO {{isAuthentcated}}</P>
 <app-list-notes *ngIf="isAuthentcated"></app-list-notes>
+<app-list-news *ngIf="!isAuthentcated && !isAddNewUser" ></app-list-news>
 
 

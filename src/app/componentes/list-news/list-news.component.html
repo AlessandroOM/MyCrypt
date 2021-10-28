@@ -1,0 +1,30 @@
+<mat-tab-group style="padding-top: 40px; padding-left: 2%; padding-right: 2%;">
+  <mat-tab label="NEWS">
+      <div  fxLayout="row wrap" f1q xLayoutAlign="start center"  style="padding: 2%" >
+       
+        <div *ngFor="let notice of News"  style="margin: 0.5%;padding: 0.3%">
+                   
+          <mat-card class="mat-card-live"  fxFlex="calc(33.3% - 11px)"
+          fxFlex.lt-md="calc(50% - 11px)"
+          fxFlex.lt-sm="100%"
+          >
+            <mat-card-header>
+              <mat-card-title> {{notice.Title}}</mat-card-title>
+            </mat-card-header>
+            <img mat-card-sm-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" style="padding: 1%">
+            <mat-card-content style="padding: 1%">
+              {{notice.News}}
+            </mat-card-content>
+            <mat-chip-list>
+              <mat-chip class="mat-chip-date" >
+                <span style="font-size:0.7rem;">Created:{{ notice.CreatedAt | date }} </span>
+              </mat-chip>
+            </mat-chip-list>
+           
+          </mat-card>
+        </div>
+      </div>
+    
+    </mat-tab>
+  
+  </mat-tab-group>

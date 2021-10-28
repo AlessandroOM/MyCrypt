@@ -10,6 +10,7 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import {MatChipsModule} from '@angular/material/chips';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 
 
@@ -24,7 +25,8 @@ const matComponent = [
   MatGridListModule,
   MatTabsModule,
   MatProgressBarModule,
-  MatChipsModule
+  MatChipsModule,
+  FlexLayoutModule
   //
   // MatAutocompleteModule,
   // MatButtonModule,

@@ -1,5 +1,4 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { GlobalService } from 'src/app/Services/global.service';
 
 @Component({
   selector: 'app-home',
@@ -8,9 +7,12 @@ import { GlobalService } from 'src/app/Services/global.service';
 })
 export class HomeComponent implements OnInit {
   @Input() isAuthentcated : boolean;
+  @Input() isAddNewUser : boolean;
 
-  constructor(private global: GlobalService) { 
+
+  constructor() { 
     this.isAuthentcated = false;
+    this.isAddNewUser = false;
   }
 
   ngOnInit(): void {

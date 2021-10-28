@@ -10,5 +10,5 @@
     <button mat-button *ngIf="logged" (click)="btnLogoutClick()">Logout</button> 
     
   </mat-toolbar>
- <app-home [isAuthentcated]="logged" ></app-home>
+ <app-home [isAuthentcated]="logged" [isAddNewUser]="newUserPress"></app-home>
  <router-outlet></router-outlet> 
